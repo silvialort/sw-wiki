@@ -4,7 +4,8 @@ const HeaderContainer = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #315e95;
+    background-color: #F3F7FF;
+    position: sticky;
     padding: 10px 50px;
     `;
 

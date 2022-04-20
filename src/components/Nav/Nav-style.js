@@ -5,7 +5,7 @@ const NavContainer = styled.nav`
     gap: 20px;
     text-transform: uppercase;
     a{
-        color: white;
+        color: #161414;
         font-weight: 600;
     }
 
