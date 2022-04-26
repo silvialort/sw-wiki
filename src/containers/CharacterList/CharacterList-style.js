@@ -5,7 +5,7 @@ const CharacterListContainer = styled.ul`
     justify-content: center;
     gap: 20px;
     align-items: flex-start;
-    flex-flow: row wrap
+    flex-flow: row wrap;
     `;
 
 
