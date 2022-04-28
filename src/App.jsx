@@ -1,17 +1,28 @@
 import React from 'react';
+import GlobalStyle from './globalStyle';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from './pages/Home';
+import Personajes from './pages/Personajes';
+import Personaje from './pages/Personajes/name';
+import Contacto from './pages/Contacto';
 
-import Header from './containers/Header/Header';
-import CharacterList from './containers/CharacterList/CharacterList';
-import Card from './components/Card/Card';
 
 function App() {
   return (
     <>
-      <Header></Header>
-      <h1>Prueba</h1>
-      <CharacterList>
-          <Card name="Luke Skywalker" />
-      </CharacterList>
+      <BrowserRouter>
+        <GlobalStyle />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/personajes" element={<Personajes />} />
+          <Route path="/personajes/:name" element={<Personaje />} />
+          <Route path="/contacto" element={<Contacto />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
