@@ -4,8 +4,10 @@ const NavContainer = styled.nav`
     display: flex;
     gap: 20px;
     text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
     a{
-        color: white;
+        color: #161414;
         font-weight: 600;
     }
 
