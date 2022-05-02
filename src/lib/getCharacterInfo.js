@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const getCharacterInfo = (url) => {
+export const getCharacterInfoRequest = (url) => {
     return axios(
         url, {
             method: 'GET'
