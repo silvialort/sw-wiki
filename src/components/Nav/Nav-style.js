@@ -6,7 +6,7 @@ const NavContainer = styled.nav`
     text-transform: uppercase;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 400;
-    a{
+    .link{
         color: #161414;
         font-weight: 600;
     }
