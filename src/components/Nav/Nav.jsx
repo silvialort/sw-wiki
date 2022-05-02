@@ -1,13 +1,13 @@
 import React from "react";
-import NavLink from 'react-router-dom';
+import {NavLink as Link} from 'react-router-dom';
 
 import NavContainer from "./Nav-style";
 
 const Nav = () => {
     return(
         <NavContainer>
-            <NavLink to='/personajes' class='link'>Personajes</NavLink>
-            <NavLink to='/contacto' class='link'>Contacto</NavLink>
+            <Link to='/personajes' class='link'>Personajes</Link>
+            <Link to='/contacto' class='link'>Contacto</Link>
         </NavContainer>
     )
 }
