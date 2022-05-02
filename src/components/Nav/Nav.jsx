@@ -6,8 +6,8 @@ import NavContainer from "./Nav-style";
 const Nav = () => {
     return(
         <NavContainer>
-            <Link to='/personajes' class='link'>Personajes</Link>
-            <Link to='/contacto' class='link'>Contacto</Link>
+            <Link to='/personajes' className='link'>Personajes</Link>
+            <Link to='/contacto' className='link'>Contacto</Link>
         </NavContainer>
     )
 }
