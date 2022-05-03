@@ -8,7 +8,6 @@ import Heading2 from '../../components/Texts/Headings/H2/Heading2';
 import Button from "../../components/Button/Button";
 
 import background from '../../assets/background.webp';
-import fondo from '../../assets/fondo.jpg';
 
 function Home () {
 
@@ -32,7 +31,7 @@ function Home () {
                 align='center'
                 justify='center'>
                     <Heading2
-                    text='Aplicación wiki realizada con React JS'
+                    text='Proyecto realizado con React JS'
                     color='#FFFF'
                     />
                     <Button 
