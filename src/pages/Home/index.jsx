@@ -7,7 +7,7 @@ import Heading1 from '../../components/Texts/Headings/H1/Heading1';
 import Heading2 from '../../components/Texts/Headings/H2/Heading2';
 import Button from "../../components/Button/Button";
 
-// import background from '../assets/background.webp';
+import background from '../../assets/background.webp';
 import fondo from '../../assets/fondo.jpg';
 
 function Home () {
@@ -17,16 +17,17 @@ function Home () {
             <Header />
             <Main>
                 <Section
-                bg='black'
+            
                 align='center'
-                justify='center'>
+                justify='center'
+                bg={background}>
                     <Heading1
                     text='Star Wars Wiki' 
                     color='#FFFF'
                     />
                 </Section>
                 <Section
-                bg='#797C8D'
+                bgcl='#797C8D'
                 direction='column'
                 align='center'
                 justify='center'>
