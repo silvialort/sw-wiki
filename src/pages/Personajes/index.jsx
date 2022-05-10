@@ -9,6 +9,8 @@ import Main from '../../containers/Main/Main';
 import CharacterList from '../../containers/CharacterList/CharacterList';
 import Section from '../../containers/Section/Section';
 import Container from "../../containers/Container/Container";
+import Footer from "../../containers/Footer/Footer";
+import Paragraph from '../../components/Texts/Paragraph';
 import Card from '../../components/Card/Card';
 import Input from '../../components/Input/Input';
 import Select from '../../components/Select/Select';
@@ -52,7 +54,11 @@ function Personajes () {
                     </CharacterList>
                 </Section>
             </Main>
-
+            <Footer>
+                <Paragraph 
+                color="#FFFF"
+                text='&#169; 2022 silvialort' />
+            </Footer>
         </>
     )
 
