@@ -8,7 +8,7 @@ const CharacterListContainer = styled.ul`
     gap: 30px;
     align-items: center;
     flex-flow: row wrap;
-    background-color: ${(props) => props.bgcolor || '#ffff'};
+    background-color: ${(props) => props.bgcolor || 'transparent'};
     `;
 
 
