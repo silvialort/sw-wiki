@@ -8,6 +8,7 @@ import Header from '../../containers/Header/Header';
 import Main from '../../containers/Main/Main';
 import CharacterList from '../../containers/CharacterList/CharacterList';
 import Section from '../../containers/Section/Section';
+import Container from "../../containers/Container/Container";
 import Card from '../../components/Card/Card';
 import Input from '../../components/Input/Input';
 import Select from '../../components/Select/Select';
@@ -31,9 +32,11 @@ function Personajes () {
             <Header />
             <Main>
                 <Section>
-                    <Input text='Buscar'/>
-                    <Select></Select>
-                    <Select></Select>
+                    <Container>
+                        <Input text='Buscar'/>
+                        <Select></Select>
+                        <Select></Select>
+                    </Container>
                     <CharacterList>
                         {
                             characterList.map((character, index) => {
