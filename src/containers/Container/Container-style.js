@@ -5,6 +5,8 @@ const ContainerDiv = styled.div`
     justify-content: center;
     align-items: center;
     background-color: transparent;
+    flex-flow: row wrap;
+    gap: 20px;
     `;
 
 
