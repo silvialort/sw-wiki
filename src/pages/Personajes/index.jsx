@@ -14,6 +14,9 @@ import Paragraph from '../../components/Texts/Paragraph';
 import Card from '../../components/Card/Card';
 import Input from '../../components/Input/Input';
 import Select from '../../components/Select/Select';
+import Button from "../../components/Button/Button";
+
+import fondo from '../../assets/fondo.jpg';
 
 function Personajes () {
 
@@ -32,7 +35,8 @@ function Personajes () {
     return(
         <>
             <Header />
-            <Main>
+            <Main
+            bg={fondo}>
                 <Section>
                     <Container>
                         <Input text='Buscar'/>
@@ -52,6 +56,10 @@ function Personajes () {
                                 )
                         })}
                     </CharacterList>
+                    <Container>
+                        <Button></Button>
+                        <Button></Button>
+                    </Container>
                 </Section>
             </Main>
             <Footer>
