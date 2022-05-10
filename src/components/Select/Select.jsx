@@ -5,9 +5,7 @@ import SelectContainer from "./Select-style";
 const Select = ({children, text}) => {
     return(
         <SelectContainer>
-            <option value='default' disabled>
-                {text}
-            </option>
+            <option value={text} disabled />
             {children}
         </SelectContainer>
     )
