@@ -13,6 +13,7 @@ const SectionContainer = styled.section`
 
     &.with-background{
         background: url(${(props) => props.bg}) center center no-repeat;
+        background-size: cover;
     }
 
     `
