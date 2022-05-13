@@ -12,7 +12,7 @@ import Container from "../../containers/Container/Container";
 import Footer from "../../containers/Footer/Footer";
 import Paragraph from '../../components/Texts/Paragraph';
 import Card from '../../components/Card/Card';
-import Input from '../../components/Input/Input';
+import Search from '../../components/Search/Search';
 import Select from '../../components/Select/Select';
 import Button from "../../components/Button/Button";
 import MainModal from "../../containers/MainModal/MainModal";
@@ -21,6 +21,7 @@ import Heading2 from "../../components/Texts/Headings/H2/Heading2";
 
 // Assets
 import fondo from '../../assets/fondo.jpg';
+import loading from '../../assets/loading.gif';
 
 // Hooks
 import { useModal } from "../../hooks/use-modal";
@@ -82,12 +83,11 @@ function Personajes () {
             <Header />
             <Main
             bg={fondo}>
-                <Section>
+                <Section direction='column'>
                     <Container>
-                        <Input text='Buscar'
-                                type='text'
+                        <Search text='Buscar'
                                 ref={searchBar}
-                                onChange={(e) => handleSearch(e)}
+                                handleChange={(e) => handleSearch(e)}
                         />
                         <Select>
                             <option value="default" disabled>Choose the gender</option>
@@ -97,7 +97,11 @@ function Personajes () {
                         </Select>
                         <Select></Select>
                     </Container>
+
                     <CharacterList>
+                        {
+                        characterService.loading && <img src={loading} />
+                        }
                         {
 
                             filteredList.map((character, index) => {
