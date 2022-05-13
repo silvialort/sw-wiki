@@ -15,10 +15,17 @@ import Card from '../../components/Card/Card';
 import Input from '../../components/Input/Input';
 import Select from '../../components/Select/Select';
 import Button from "../../components/Button/Button";
+import MainModal from "../../containers/MainModal/MainModal";
 
+// Assets
 import fondo from '../../assets/fondo.jpg';
 
+// Hooks
+import { useModal } from "../../hooks/use-modal";
+
 function Personajes () {
+
+    const { handleModal, modalOpened } = useModal();
 
     const characterService = useCharacters();
 
@@ -59,9 +66,7 @@ function Personajes () {
         const character = await characterService.getCharacterInfo(url);
         const characterInfo = await character.data;
         setSelectedCharacter(characterInfo);
-        console.log(selectedCharacter);
-
-
+        handleModal(true);
     }
 
     const handleSearch = () => {
@@ -111,6 +116,15 @@ function Personajes () {
                         />
                     </Container>
                 </Section>
+                {
+                modalOpened && (
+                <MainModal handleClick={() => handleModal(false)}>
+                    <ModalContent>
+
+                    </ModalContent>
+                </MainModal>
+                )
+                }
             </Main>
             <Footer>
                 <Paragraph
