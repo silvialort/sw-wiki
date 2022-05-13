@@ -1,12 +1,11 @@
 import React from 'react';
 import InputContainer from './Input-style';
 
-const Input = ({text, funcion, ref}) => {
+const Input = ({text}) => {
     return(
         <InputContainer
         placeholder={text}
-        onChange={funcion}
-        ref={ref} />
+        />
     )
 }
 
