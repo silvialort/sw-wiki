@@ -16,6 +16,8 @@ import Input from '../../components/Input/Input';
 import Select from '../../components/Select/Select';
 import Button from "../../components/Button/Button";
 import MainModal from "../../containers/MainModal/MainModal";
+import ModalContent from "../../components/ModalContent/ModalContent";
+import Heading2 from "../../components/Texts/Headings/H2/Heading2";
 
 // Assets
 import fondo from '../../assets/fondo.jpg';
@@ -120,6 +122,17 @@ function Personajes () {
                 modalOpened && (
                 <MainModal handleClick={() => handleModal(false)}>
                     <ModalContent>
+                        <Heading2 text={selectedCharacter.name} />
+                        <ul>
+                            <li>Altura: {selectedCharacter.height} cm</li>
+                            <li>Peso: {selectedCharacter.mass} kg</li>
+                            <li>Color de pelo: {selectedCharacter.hair_color}</li>
+                            <li>Piel/chasis: {selectedCharacter.skin_color}</li>
+                            <li>Ojos: {selectedCharacter.eye_color}</li>
+                            <li>Año de nacimiento: {selectedCharacter.birth_year}</li>
+                            <li>Género: {selectedCharacter.gender}</li>
+                            <li>Planeta de origen: {selectedCharacter.homeworld.name}</li>
+                        </ul>
 
                     </ModalContent>
                 </MainModal>
