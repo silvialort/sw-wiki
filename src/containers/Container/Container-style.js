@@ -7,6 +7,7 @@ const ContainerDiv = styled.div`
     background-color: transparent;
     flex-flow: row wrap;
     gap: 20px;
+    margin: 20px auto;
     `;
 
 
