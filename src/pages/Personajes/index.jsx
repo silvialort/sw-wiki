@@ -24,6 +24,9 @@ function Personajes () {
 
     const [characterList, setCharacterList] = useState([]);
     const [filteredList, setFilteredList] = useState([]);
+
+    const [selectedCharacter, setSelectedCharacter] = useState({});
+
     // const [currentPage, setCurrentPage] = useState(0);
 
     // const nextPage = () => {
@@ -52,6 +55,15 @@ function Personajes () {
         getCharacterList();
     }, []);
 
+    const handleCharacter = async (url) => {
+        const character = await characterService.getCharacterInfo(url);
+        const characterInfo = await character.data;
+        setSelectedCharacter(characterInfo);
+        console.log(selectedCharacter);
+
+
+    }
+
     const handleSearch = () => {
         const searchedValue = searchBar.current.value;
         const filteredList = characterList.filter(character => character.name.toLowerCase().includes(searchedValue));
@@ -75,20 +87,28 @@ function Personajes () {
                     </Container>
                     <CharacterList>
                         {
+
                             filteredList.map((character, index) => {
                                 return(
                                     <li key={index}>
                                         <Card
                                         name={character.name}
-
+                                        handleClick={() => handleCharacter(character.url)}
                                         />
                                     </li>
                                 )
-                        })}
+                            })
+
+                        }
                     </CharacterList>
                     <Container>
-                        <Button text='Anterior' />
-                        <Button text='Siguiente' />
+                        <Button
+                        text='Anterior'
+                        handleClick={() => console.log('Prev')}
+                        />
+                        <Button text='Siguiente'
+                        handleClick={() => console.log('Next')}
+                        />
                     </Container>
                 </Section>
             </Main>
