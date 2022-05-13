@@ -21,16 +21,42 @@ import fondo from '../../assets/fondo.jpg';
 function Personajes () {
 
     const characterService = useCharacters();
+
     const [characterList, setCharacterList] = useState([]);
+    const [filteredList, setFilteredList] = useState([]);
+    // const [currentPage, setCurrentPage] = useState(0);
+
+    // const nextPage = () => {
+    //     if (currentPage <= 9) {
+    //         setCurrentPage(currentPage + 1);
+    //     }
+
+    // }
+
+    // const prevPage = () => {
+    //     if (currentPage > 0) {
+    //         setCurrentPage(currentPage - 1);
+    //     }
+    // }
+
+    const searchBar = useRef(null);
+
 
     useEffect(() => {
         const getCharacterList = async () => {
             const characters = await characterService.getCharacters();
             const { results } = await characters.data;
             setCharacterList(results);
+            setFilteredList(results);
         }
         getCharacterList();
     }, []);
+
+    const handleSearch = () => {
+        const searchedValue = searchBar.current.value;
+        const filteredList = characterList.filter(character => character.name.toLowerCase().includes(searchedValue));
+        setFilteredList(filteredList);
+    }
 
     return(
         <>
@@ -39,13 +65,17 @@ function Personajes () {
             bg={fondo}>
                 <Section>
                     <Container>
-                        <Input text='Buscar'/>
+                        <Input text='Buscar'
+                                type='text'
+                                ref={searchBar}
+                                onChange={(e) => handleSearch(e)}
+                        />
                         <Select></Select>
                         <Select></Select>
                     </Container>
                     <CharacterList>
                         {
-                            characterList.map((character, index) => {
+                            filteredList.map((character, index) => {
                                 return(
                                     <li key={index}>
                                         <Card
@@ -57,13 +87,13 @@ function Personajes () {
                         })}
                     </CharacterList>
                     <Container>
-                        <Button></Button>
-                        <Button></Button>
+                        <Button text='Anterior' />
+                        <Button text='Siguiente' />
                     </Container>
                 </Section>
             </Main>
             <Footer>
-                <Paragraph 
+                <Paragraph
                 color="#FFFF"
                 text='&#169; 2022 silvialort' />
             </Footer>
