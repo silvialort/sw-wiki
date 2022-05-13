@@ -89,7 +89,12 @@ function Personajes () {
                                 ref={searchBar}
                                 onChange={(e) => handleSearch(e)}
                         />
-                        <Select></Select>
+                        <Select>
+                            <option value="default" disabled>Choose the gender</option>
+                            <option value="male">Man</option>
+                            <option value="female">Woman</option>
+                            <option value="n/a">Gender neutral</option>
+                        </Select>
                         <Select></Select>
                     </Container>
                     <CharacterList>
