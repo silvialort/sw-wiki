@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home';
 import Personajes from './pages/Personajes';
-import Personaje from './pages/Personajes/name';
+import Planetas from './pages/Planetas';
 import Contacto from './pages/Contacto';
 
 
@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/personajes" element={<Personajes />} />
-          <Route path="/personajes/:name" element={<Personaje />} />
+          <Route path="/planetas" element={<Planetas />} />
           <Route path="/contacto" element={<Contacto />} />
         </Routes>
       </BrowserRouter>
