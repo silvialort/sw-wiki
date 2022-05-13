@@ -18,11 +18,12 @@ const MainModalContainer = styled.div`
         max-width: 900px;
         min-height: 300px;
         background-color: #F3F7FF;
-        border-radius: 0 0 20px 20px;
+        border-radius: 20px;
         .tob-bar{
-            padding: 5px;
+            padding: 20px;
             text-align: right;
             span{
+                font-weight: 700;
                 cursor: pointer;
             }
         }
