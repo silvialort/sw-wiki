@@ -21,7 +21,7 @@ export const useCharacters = () => {
 
     const getCharacterInfo = async (url) => {
         try{
-            const characterResponse = await getCharacterInfoRequest();
+            const characterResponse = await getCharacterInfoRequest(url);
             setLoading(false);
             return characterResponse;
         }
