@@ -3,7 +3,9 @@ import InputContainer from './Input-style';
 
 const Input = ({text}) => {
     return(
-        <InputContainer placeholder={text} />
+        <InputContainer
+        placeholder={text}
+        />
     )
 }
 

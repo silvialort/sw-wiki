@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const InputContainer = styled.input`
+const SearchContainer = styled.input`
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -17,4 +17,4 @@ const InputContainer = styled.input`
     }
     `;
 
-export default InputContainer;
+export default SearchContainer;

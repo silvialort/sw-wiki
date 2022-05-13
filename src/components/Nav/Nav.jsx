@@ -6,6 +6,7 @@ const Nav = () => {
     return(
         <NavContainer>
             <a href="">Personajes</a>
+            <a href="">Planetas</a>
             <a href="">Contacto</a>
         </NavContainer>
     )

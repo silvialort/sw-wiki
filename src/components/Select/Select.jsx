@@ -2,12 +2,9 @@ import React from "react";
 
 import SelectContainer from "./Select-style";
 
-const Select = ({children, text}) => {
+const Select = ({children, handleChange}) => {
     return(
-        <SelectContainer>
-            <option value='default' disabled>
-                {text}
-            </option>
+        <SelectContainer onChange={() => handleChange()}>
             {children}
         </SelectContainer>
     )
