@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export const getCharactersRequest = () => {
+export const getCharactersRequest = (page) => {
     return axios(
-        'https://swapi.dev/api/people', {
+        `https://swapi.dev/api/people/?page=${page}`, {
             method: 'GET'
         });
 }
