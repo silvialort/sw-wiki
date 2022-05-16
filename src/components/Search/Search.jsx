@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchContainer from './Input-style';
+import SearchContainer from './Search-style';
 
 const Search = ({text, handleChange}) => {
     return(
