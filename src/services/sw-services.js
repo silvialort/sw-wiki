@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { getCharactersRequest } from '../lib/getCharacters';
 import { getCharacterInfoRequest } from '../lib/getCharacterInfo';
-import { getPlanetsRequest } from '../lib/getPlanetsInfo';
+import { getPlanetsRequest } from '../lib/getPlanets';
 import { getPlanetInfoRequest } from '../lib/getPlanetInfo';
 
 const [loading, setLoading] = useState(true);
