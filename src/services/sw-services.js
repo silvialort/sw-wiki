@@ -1,17 +1,18 @@
+
 import { useState } from 'react';
 import { getCharactersRequest } from '../lib/getCharacters';
 import { getCharacterInfoRequest } from '../lib/getCharacterInfo';
-import { getPlanetsRequest } from '../lib/getPlanetsInfo';
+import { getPlanetsRequest } from '../lib/getPlanets';
 import { getPlanetInfoRequest } from '../lib/getPlanetInfo';
 
-const [loading, setLoading] = useState(true);
-const [characterListError, setCharacterListError] = useState('');
+
 
 export const useCharacters = () => {
-
-    const getCharacters = async () => {
+    const [loading, setLoading] = useState(true);
+    const [characterListError, setCharacterListError] = useState('');
+    const getCharacters = async (page) => {
         try{
-            const characterResponse = await getCharactersRequest();
+            const characterResponse = await getCharactersRequest(page);
             setLoading(false);
             return characterResponse;
         }
@@ -44,16 +45,17 @@ export const useCharacters = () => {
 }
 
 export const usePlanets = () => {
-
-    const getPlanets = async () => {
+    const [loading, setLoading] = useState(true);
+    const [planetListError, setPlanetListError] = useState('');
+    const getPlanets = async (page) => {
         try{
-            const planetResponse = await getPlanetsRequest();
+            const planetResponse = await getPlanetsRequest(page);
             setLoading(false);
             return planetResponse;
         }
         catch(error){
             setLoading(false);
-            setCharacterListError('Ha ocurrido un error');
+            setPlanetListError('Ha ocurrido un error');
         }
     }
 
@@ -66,7 +68,7 @@ export const usePlanets = () => {
         }
         catch(error){
             setLoading(false);
-            setCharacterListError('Ha ocurrido un error');
+            setPlanetListError('Ha ocurrido un error');
         }
 
     }
@@ -75,6 +77,6 @@ export const usePlanets = () => {
         getPlanets,
         getPlanetInfo,
         loading,
-        characterListError
+        planetListError
     }
 }
