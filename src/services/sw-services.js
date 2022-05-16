@@ -4,11 +4,11 @@ import { getCharacterInfoRequest } from '../lib/getCharacterInfo';
 import { getPlanetsRequest } from '../lib/getPlanets';
 import { getPlanetInfoRequest } from '../lib/getPlanetInfo';
 
-const [loading, setLoading] = useState(true);
-const [characterListError, setCharacterListError] = useState('');
+
 
 export const useCharacters = () => {
-
+    const [loading, setLoading] = useState(true);
+    const [characterListError, setCharacterListError] = useState('');
     const getCharacters = async () => {
         try{
             const characterResponse = await getCharactersRequest();
@@ -44,7 +44,8 @@ export const useCharacters = () => {
 }
 
 export const usePlanets = () => {
-
+    const [loading, setLoading] = useState(true);
+    const [planetListError, setPlanetListError] = useState('');
     const getPlanets = async () => {
         try{
             const planetResponse = await getPlanetsRequest();
@@ -53,7 +54,7 @@ export const usePlanets = () => {
         }
         catch(error){
             setLoading(false);
-            setCharacterListError('Ha ocurrido un error');
+            setPlanetListError('Ha ocurrido un error');
         }
     }
 
@@ -66,7 +67,7 @@ export const usePlanets = () => {
         }
         catch(error){
             setLoading(false);
-            setCharacterListError('Ha ocurrido un error');
+            setPlanetListError('Ha ocurrido un error');
         }
 
     }
@@ -75,6 +76,6 @@ export const usePlanets = () => {
         getPlanets,
         getPlanetInfo,
         loading,
-        characterListError
+        planetListError
     }
 }
