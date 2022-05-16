@@ -20,7 +20,7 @@ import ModalContent from "../../components/ModalContent/ModalContent";
 import Heading2 from "../../components/Texts/Headings/H2/Heading2";
 
 // Assets
-import fondo from '../../assets/fondo.jpg';
+import fondo from '../../assets/fondo.webp';
 import loading from '../../assets/loading.gif';
 
 // Hooks
@@ -33,11 +33,10 @@ function Personajes () {
     let [currentPage, setCurrentPage] = useState(1);
     const characterService = useCharacters();
 
-    let [characterList, setCharacterList] = useState([]);
+    const [characterList, setCharacterList] = useState([]);
     const [filteredList, setFilteredList] = useState([]);
 
     const [selectedCharacter, setSelectedCharacter] = useState({});
-
 
     const nextPage = () => {
         if (currentPage <= 9) {
@@ -79,6 +78,7 @@ function Personajes () {
     }
 
     const handlePage = async () => {
+
         const characters = await characterService.getCharacters(currentPage);
         const { results } = await characters.data;
         setCharacterList(results);
@@ -108,7 +108,6 @@ function Personajes () {
                             <option value="female">Woman</option>
                             <option value="n/a">Gender neutral</option>
                         </Select>
-                        <Select></Select>
                     </Container>
 
                     <CharacterList>
