@@ -30,34 +30,40 @@ function Personajes () {
 
     const { handleModal, modalOpened } = useModal();
 
+    let [currentPage, setCurrentPage] = useState(1);
     const characterService = useCharacters();
 
-    const [characterList, setCharacterList] = useState([]);
+    let [characterList, setCharacterList] = useState([]);
     const [filteredList, setFilteredList] = useState([]);
 
     const [selectedCharacter, setSelectedCharacter] = useState({});
 
-    // const [currentPage, setCurrentPage] = useState(0);
 
-    // const nextPage = () => {
-    //     if (currentPage <= 9) {
-    //         setCurrentPage(currentPage + 1);
-    //     }
+    const nextPage = () => {
+        if (currentPage <= 9) {
+            currentPage++;
+            setCurrentPage(currentPage);
+            handlePage();
+            console.log(currentPage);
+        }
 
-    // }
+    }
 
-    // const prevPage = () => {
-    //     if (currentPage > 0) {
-    //         setCurrentPage(currentPage - 1);
-    //     }
-    // }
+    const prevPage = () => {
+        if (currentPage > 1) {
+            currentPage--;
+            setCurrentPage(currentPage);
+            console.log(currentPage);
+            handlePage();
+        }
+    }
 
     const searchBar = useRef(null);
 
 
     useEffect(() => {
         const getCharacterList = async () => {
-            const characters = await characterService.getCharacters();
+            const characters = await characterService.getCharacters(currentPage);
             const { results } = await characters.data;
             setCharacterList(results);
             setFilteredList(results);
@@ -70,6 +76,13 @@ function Personajes () {
         const characterInfo = await character.data;
         setSelectedCharacter(characterInfo);
         handleModal(true);
+    }
+
+    const handlePage = async () => {
+        const characters = await characterService.getCharacters(currentPage);
+        const { results } = await characters.data;
+        setCharacterList(results);
+        setFilteredList(results);
     }
 
     const handleSearch = () => {
@@ -120,10 +133,10 @@ function Personajes () {
                     <Container>
                         <Button
                         text='Anterior'
-                        handleClick={() => console.log('Prev')}
+                        handleClick={() => prevPage()}
                         />
                         <Button text='Siguiente'
-                        handleClick={() => console.log('Next')}
+                        handleClick={() => nextPage()}
                         />
                     </Container>
                 </Section>
