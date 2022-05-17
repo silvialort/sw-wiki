@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ButtonContainer = styled.span`
-    background-color: #161414;
+    background-color: ${(props) => props.color || '#161414'};
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 500;
     color: #FBFBFB;
@@ -11,7 +11,7 @@ const ButtonContainer = styled.span`
     padding: 5px 25px;
     cursor: pointer;
     &:hover{
-        outline: solid 5px #161414;
+        outline: solid 5px ${(props) => props.outline || '#161414'};
         background-color: transparent;
     }
 `;
