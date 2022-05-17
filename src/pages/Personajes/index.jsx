@@ -73,7 +73,12 @@ function Personajes () {
     const handleCharacter = async (url) => {
         const character = await characterService.getCharacterInfo(url);
         const characterInfo = await character.data;
-        setSelectedCharacter(characterInfo);
+        const planet = await characterService.getCharacterInfo(characterInfo.homeworld);
+        const planetInfo = await planet.data;
+        let charachter = characterInfo;
+        charachter.planet = planetInfo.name;
+
+        setSelectedCharacter(charachter);
         handleModal(true);
     }
 
@@ -99,7 +104,7 @@ function Personajes () {
                 <Section direction='column'>
                     <Container>
                         <Search text='Buscar'
-                                ref={searchBar}
+                                reference={searchBar}
                                 handleChange={(e) => handleSearch(e)}
                         />
                         <Select>
@@ -152,7 +157,7 @@ function Personajes () {
                             <li>Ojos: {selectedCharacter.eye_color}</li>
                             <li>Año de nacimiento: {selectedCharacter.birth_year}</li>
                             <li>Género: {selectedCharacter.gender}</li>
-                            <li>Planeta de origen: {selectedCharacter.homeworld.name}</li>
+                            <li>Planeta de origen: {selectedCharacter.planet}</li>
                         </ul>
 
                     </ModalContent>
