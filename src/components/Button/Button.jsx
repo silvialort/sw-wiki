@@ -4,7 +4,7 @@ import ButtonContainer from "./Button-style";
 
 const Button = ({text, handleClick, color}) => {
     return(
-        <ButtonContainer onClick={() => handleClick()}>
+        <ButtonContainer color={color} onClick={() => handleClick()}>
             {text}
         </ButtonContainer>
     )
