@@ -7,6 +7,7 @@ const Nav = () => {
     return(
         <NavContainer>
             <Link to='/personajes' className='link'>Personajes</Link>
+            <Link to='/planetas' className='link'>Planetas</Link>
             <Link to='/contacto' className='link'>Contacto</Link>
         </NavContainer>
     )

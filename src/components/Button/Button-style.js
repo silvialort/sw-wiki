@@ -11,7 +11,8 @@ const ButtonContainer = styled.span`
     padding: 5px 25px;
     cursor: pointer;
     &:hover{
-        background-color: #797C8D;
+        outline: solid 5px #161414;
+        background-color: transparent;
     }
 `;
 
