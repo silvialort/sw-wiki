@@ -9,6 +9,7 @@ import Search from '../../components/Search/Search';
 import Select from '../../components/Select/Select';
 import Button from '../../components/Button/Button';
 import Card from '../../components/Card/Card';
+import Paragraph from '../../components/Texts/Paragraph';
 import Footer from '../../containers/Footer/Footer';
 import MainModal from '../../containers/MainModal/MainModal';
 import ModalContent from '../../components/ModalContent/ModalContent';
@@ -86,15 +87,25 @@ function Planetas () {
         <>
             <Header />
             <Main bg={fondo}>
-            <Section>
+            <Section direction='column'>
             <Container>
                 <Search text='Buscar'
                         reference={searchBar}
                         handleChange={(e) => handleSearch(e)}/>
-                <Select></Select>
-                <Select></Select>
+                <Select>
+                    <option value="0" hidden default selected>Clima</option>
+                    <option value="todos">Todos</option>
+                    <option value="arid">Árido</option>
+                    <option value="temperate">Templado</option>
+                    <option value="tropical">Tropical</option>
+                    <option value="frozen">Helado</option>
+                    <option value="murky">Húmedo</option>
+                    <option value="windy">Ventoso</option>
+                    <option value="hot">Caluroso</option>
+                </Select>
             </Container>
             <CharacterList>
+                
                 {
                     filteredplanetList.map((planet, index) => {
                         return(
@@ -136,7 +147,11 @@ function Planetas () {
             </Container>
             </Section>
             </Main>
-            <Footer />
+            <Footer>
+                <Paragraph text='2022 - silvialort'
+                            color='#FFFF' />
+            </Footer>
+            
         </>
     )
 
