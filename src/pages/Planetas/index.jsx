@@ -28,6 +28,8 @@ function Planetas () {
     const [filteredplanetList, setFilteredPlanetList] = useState([]);
     const [selectedPlanet, setSelectedPlanet] = useState({});
 
+    const searchBar = useRef(null);
+
     const nextPage = () => {
         if (currentPage <= 6) {
             currentPage++;
@@ -74,8 +76,10 @@ function Planetas () {
         handleModal(true);
     }
 
-    const handleSearch = async () => {
-        const 
+    const handleSearch = () => {
+        const searchedValue = searchBar.current.value;
+        const filteredList = planetList.filter(planet => planet.name.toLowerCase().includes(searchedValue));
+        setFilteredPlanetList(filteredList);
     }
 
     return(
@@ -84,7 +88,9 @@ function Planetas () {
             <Main bg={fondo}>
             <Section>
             <Container>
-                <Search text='Buscar'/>
+                <Search text='Buscar'
+                        reference={searchBar}
+                        handleChange={(e) => handleSearch(e)}/>
                 <Select></Select>
                 <Select></Select>
             </Container>
