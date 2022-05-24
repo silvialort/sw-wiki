@@ -58,6 +58,7 @@ function Personajes () {
     }
 
     const searchBar = useRef(null);
+    const filter = useRef(null);
 
 
     useEffect(() => {
@@ -96,6 +97,16 @@ function Personajes () {
         setFilteredList(filteredList);
     }
 
+    const handleFilter = () => {
+        if (filter.current.value == 'todos') {
+            setFilteredList(characterList);
+        }else{
+            const filteredValue = filter.current.value;
+            const filteredList = characterList.filter(character => character.gender === filteredValue);
+            setFilteredList(filteredList);
+        }
+    }
+
     return(
         <>
             <Header />
@@ -107,11 +118,14 @@ function Personajes () {
                                 reference={searchBar}
                                 handleChange={(e) => handleSearch(e)}
                         />
-                        <Select>
-                            <option value="default" disabled>Choose the gender</option>
-                            <option value="male">Man</option>
-                            <option value="female">Woman</option>
-                            <option value="n/a">Gender neutral</option>
+                        <Select
+                            reference={filter}
+                            handleChange={(e) => handleFilter(e)}>
+                            <option value="default" hidden default>Elige el género</option>
+                            <option value="todos">Todos</option>
+                            <option value="male">Hombre</option>
+                            <option value="female">Mujer</option>
+                            <option value="n/a">No binario</option>
                         </Select>
                     </Container>
 
@@ -137,9 +151,11 @@ function Personajes () {
                     <Container>
                         <Button
                         text='Anterior'
+                        color='#243382'
                         handleClick={() => prevPage()}
                         />
                         <Button text='Siguiente'
+                        color='#243382'
                         handleClick={() => nextPage()}
                         />
                     </Container>
