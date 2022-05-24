@@ -10,10 +10,6 @@ const ButtonContainer = styled.span`
     text-align: center;
     padding: 5px 25px;
     cursor: pointer;
-    &:hover{
-        outline: solid 5px ${(props) => props.outline || '#161414'};
-        background-color: transparent;
-    }
 `;
 
 export default ButtonContainer;
