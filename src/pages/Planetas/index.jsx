@@ -30,6 +30,7 @@ function Planetas () {
     const [selectedPlanet, setSelectedPlanet] = useState({});
 
     const searchBar = useRef(null);
+    const filter = useRef(null);
 
     const nextPage = () => {
         if (currentPage <= 6) {
@@ -83,6 +84,17 @@ function Planetas () {
         setFilteredPlanetList(filteredList);
     }
 
+    const handleFilter = () => {
+        if (filter.current.value == 'todos') {
+            setFilteredPlanetList(filteredplanetList);
+        }else{
+            let filterValue = filter.current.value;
+            const filteredList = planetList.filter(planet => planet.climate.includes(filterValue));
+            setFilteredPlanetList(filteredList);
+        }
+        
+    }
+
     return(
         <>
             <Header />
@@ -92,8 +104,11 @@ function Planetas () {
                 <Search text='Buscar'
                         reference={searchBar}
                         handleChange={(e) => handleSearch(e)}/>
-                <Select>
-                    <option value="0" hidden default selected>Clima</option>
+                <Select 
+                        reference={filter}
+                        handleChange={(e) => handleFilter(e)}
+                >
+                    <option value="0" hidden default>Clima</option>
                     <option value="todos">Todos</option>
                     <option value="arid">Árido</option>
                     <option value="temperate">Templado</option>
