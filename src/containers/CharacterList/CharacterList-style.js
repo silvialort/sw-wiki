@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import fondo from "../../assets/fondo.jpg";
 
 const CharacterListContainer = styled.ul`
     margin: 30px auto;
