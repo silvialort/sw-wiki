@@ -86,7 +86,8 @@ function Planetas () {
 
     const handleFilter = () => {
         if (filter.current.value == 'todos') {
-            setFilteredPlanetList(filteredplanetList);
+            console.log(filteredplanetList);
+            setFilteredPlanetList(planetList);
         }else{
             let filterValue = filter.current.value;
             const filteredList = planetList.filter(planet => planet.climate.includes(filterValue));
