@@ -8,7 +8,7 @@ import HeaderContainer from "./Header-style";
 const Header = () => {
     return(
         <HeaderContainer>
-            <Logo />
+            <Link to="/"><Logo /></Link>
             <Nav />
         </HeaderContainer>
     )
