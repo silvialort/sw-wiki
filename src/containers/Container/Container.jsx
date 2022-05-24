@@ -1,9 +1,9 @@
 import React from 'react';
 import ContainerDiv from './Container-style';
 
-const Container = ({children}) => {
+const Container = ({children, direction}) => {
     return(
-        <ContainerDiv>
+        <ContainerDiv direction={direction}>
             {children}
         </ContainerDiv>
     )

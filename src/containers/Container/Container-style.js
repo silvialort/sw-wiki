@@ -5,7 +5,7 @@ const ContainerDiv = styled.div`
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    flex-flow: row wrap;
+    flex-flow: ${(props) => props.direction || 'row'} wrap;
     gap: 20px;
     margin: 20px auto;
     `;
