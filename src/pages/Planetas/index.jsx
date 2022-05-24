@@ -13,6 +13,8 @@ import Footer from '../../containers/Footer/Footer';
 import MainModal from '../../containers/MainModal/MainModal';
 import ModalContent from '../../components/ModalContent/ModalContent';
 
+import fondo from '../../assets/fondo.webp';
+
 import { usePlanets } from '../../services/sw-services';
 import { useModal } from '../../hooks/use-modal';
 
@@ -71,10 +73,15 @@ function Planetas () {
         setSelectedPlanet(planetInfo);
         handleModal(true);
     }
+
+    const handleSearch = async () => {
+        const 
+    }
+
     return(
         <>
             <Header />
-            <Main>
+            <Main bg={fondo}>
             <Section>
             <Container>
                 <Search text='Buscar'/>
