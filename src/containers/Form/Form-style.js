@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const FormContainer = styled.form`
+    margin: 20px;
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -15,6 +16,7 @@ const FormContainer = styled.form`
         color: #C4C4C4;
         border-radius: 10px;
         margin: 10px auto;
+        min-height: 250px;
         box-shadow: 0 0 4px rgba(0,0,0,0.25);
         border: none;
         &:active{
@@ -31,7 +33,7 @@ const FormContainer = styled.form`
         border-radius: 5px;
         text-align: center;
         padding: 5px 25px;
-        cursor: pointer;  
+        cursor: pointer;
     }
     label{
         font-size: 16px;
@@ -52,7 +54,7 @@ const FormContainer = styled.form`
         &:active{
             box-shadow: none;
             border: solid 2px #C4C4C4;
-        
+
     }
     `;
 

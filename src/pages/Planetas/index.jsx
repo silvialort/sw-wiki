@@ -15,6 +15,7 @@ import MainModal from '../../containers/MainModal/MainModal';
 import ModalContent from '../../components/ModalContent/ModalContent';
 
 import fondo from '../../assets/fondo.webp';
+import loading from '../../assets/loading.gif';
 
 import { usePlanets } from '../../services/sw-services';
 import { useModal } from '../../hooks/use-modal';
@@ -93,7 +94,7 @@ function Planetas () {
             const filteredList = planetList.filter(planet => planet.climate.includes(filterValue));
             setFilteredPlanetList(filteredList);
         }
-        
+
     }
 
     return(
@@ -105,7 +106,7 @@ function Planetas () {
                 <Search text='Buscar'
                         reference={searchBar}
                         handleChange={(e) => handleSearch(e)}/>
-                <Select 
+                <Select
                         reference={filter}
                         handleChange={(e) => handleFilter(e)}
                 >
@@ -121,8 +122,12 @@ function Planetas () {
                 </Select>
             </Container>
             <CharacterList>
-                
                 {
+                        planetService.loading && <img src={loading} />
+                }
+                {
+
+
                     filteredplanetList.map((planet, index) => {
                         return(
                             <li key={index}>
@@ -156,9 +161,11 @@ function Planetas () {
             <Container>
                 <Button
                 text='Anterior'
+                color='#243382'
                 handleClick={() => prevPage()} />
                 <Button
                 text='Siguiente'
+                color='#243382'
                 handleClick={() => nextPage()} />
             </Container>
             </Section>
@@ -167,7 +174,7 @@ function Planetas () {
                 <Paragraph text='2022 - silvialort'
                             color='#FFFF' />
             </Footer>
-            
+
         </>
     )
 

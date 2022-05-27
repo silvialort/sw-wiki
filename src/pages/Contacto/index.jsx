@@ -28,7 +28,8 @@ function Contact () {
     return(
         <>
             <Header />
-            <Main>
+            <Main
+            bgcl="#cad0db">
                 <Container direction='column'>
                     <HeadingH1 text='Contacto'/>
                     <Paragraph text='Si quiere contactar, puede hacerlo a través de este formulario.'/>
@@ -41,12 +42,12 @@ function Contact () {
                                 onBlur={(e) => handleForm(e)}
                         />
                         <label htmlFor="asunto">Asunto</label>
-                        <input  type="text" 
+                        <input  type="text"
                                 name='asunto'
                                 onBlur={(e) => handleForm(e)}
                         />
                         <label htmlFor="mensaje">Mensaje</label>
-                        <textarea   name="mensaje" 
+                        <textarea   name="mensaje"
                                     onBlur={(e) => handleForm(e)}
                         />
                         <span onClick={() => sendForm()}>Enviar</span>

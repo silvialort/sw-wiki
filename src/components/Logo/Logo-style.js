@@ -6,6 +6,10 @@ const LogoContainer = styled.div`
     .logo-image{
         max-width: 100%;
     }
+    @media screen and (max-width: 700px) {
+        display:none;
+    }
+
 `;
 
 export default LogoContainer;

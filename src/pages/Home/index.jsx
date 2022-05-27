@@ -10,7 +10,7 @@ import Button from "../../components/Button/Button";
 import Footer from "../../containers/Footer/Footer";
 import Paragraph from '../../components/Texts/Paragraph';
 
-import background from '../../assets/background.webp';
+import background from '../../assets/background.jpg';
 
 function Home () {
 

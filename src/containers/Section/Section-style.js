@@ -9,6 +9,8 @@ const SectionContainer = styled.section`
     flex-flow: ${(props) => props.direction || 'row'} wrap;
     justify-content: ${(props) => props.justify || 'center'};
     align-items: ${(props) => props.align || 'flex-start'};
+    background-color: ${(props) => props.bgcl};
+
     &.with-background{
         background: url(${(props) => props.bg}) center center no-repeat;
         background-size: cover;
