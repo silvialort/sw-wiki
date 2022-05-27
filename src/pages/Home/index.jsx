@@ -19,12 +19,12 @@ function Home () {
             <Header />
             <Main>
                 <Section
-            
+
                 align='center'
                 justify='center'
                 bg={background}>
                     <Heading1
-                    text='Star Wars Wiki' 
+                    text='Star Wars Wiki'
                     color='#FFFF'
                     />
                 </Section>
@@ -39,11 +39,11 @@ function Home () {
                     />
                     <Container>
                         <Link to='/personajes'>
-                            <Button 
+                            <Button
                             text='Personajes'/>
                         </Link>
                         <Link to='/planetas'>
-                            <Button 
+                            <Button
                             text='Planetas'/>
                         </Link>
                     </Container>

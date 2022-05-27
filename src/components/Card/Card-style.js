@@ -22,8 +22,6 @@ const CharacterCardContainer = styled.article`
         text-align: center;
         color: #243382;
     }
-<<<<<<< HEAD
-=======
 
     span{
         background-color: #161414;
@@ -36,7 +34,6 @@ const CharacterCardContainer = styled.article`
         padding: 5px 25px;
         cursor: pointer;
     }
->>>>>>> 958d0145736e6ac7f3b386a98248286b8569274f
 `;
 
 export default CharacterCardContainer;

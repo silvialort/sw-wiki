@@ -9,13 +9,9 @@ import HeaderContainer from "./Header-style";
 const Header = () => {
     return(
         <HeaderContainer>
-<<<<<<< HEAD
-            <Link to="/"><Logo /></Link>
-=======
             <Link to='/'>
                 <Logo />
             </Link>
->>>>>>> feature/personajes
             <Nav />
         </HeaderContainer>
     )
