@@ -171,8 +171,9 @@ function Planetas () {
             </Section>
             </Main>
             <Footer>
-                <Paragraph text='2022 - silvialort'
-                            color='#FFFF' />
+                <Paragraph
+                    color="#FFFF"
+                    text='&#169; 2022 silvialort' />
             </Footer>
 
         </>

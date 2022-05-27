@@ -54,7 +54,11 @@ function Contact () {
                     </Form>
                 </Section>
             </Main>
-            <Footer></Footer>
+            <Footer>
+                <Paragraph
+                color="#FFFF"
+                text='&#169; 2022 silvialort' />
+            </Footer>
         </>
     )
 
